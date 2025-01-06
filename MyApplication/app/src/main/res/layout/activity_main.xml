@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="1127dp"
+        android:layout_height="813dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/edtNumber1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter first number" />
+
+        <EditText
+            android:id="@+id/edtNumber2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter second number" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="Subtract" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="Multiply" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="calculate"
+            android:text="Divide" />
+
+        <TextView
+            android:id="@+id/txtResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result will appear here" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Ok" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
