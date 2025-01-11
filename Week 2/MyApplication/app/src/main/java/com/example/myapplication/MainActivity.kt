@@ -89,10 +89,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             //    var text = txtName.text
               //  when(v?.id){
                 //    R.id.btnOk->{
-                 //       txtNamex
+                 //       txtName
                    // }
                 }
-                //val car = arrayOf("MT","CBR","Kawa")
+                //val car = arrayOf("MT","CBR","Kawasaki")
                // car[1] = "Kia"
                 //txtName.setText(car.joinToString())
 
