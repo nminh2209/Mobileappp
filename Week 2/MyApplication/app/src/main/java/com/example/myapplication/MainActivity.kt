@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val car = Cars("Ford", "Mustang", 1979)
                 txtName.setText(car.getModel())
                // txtName.setText("Hello $text")
+                Toast.makeText(this,"Hello world", Toast.LENGTH_LONG).show()
             }
             R.id.btnCancel -> {
                 txtName.setText("Cancel")
