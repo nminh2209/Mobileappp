@@ -27,12 +27,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        // Initialize views
+
         btnLogin = findViewById(R.id.btnLogin)
         txtUser = findViewById(R.id.txtUser)
         txtPass = findViewById(R.id.txtPass)
 
-        // Set click listener
+
         btnLogin.setOnClickListener(this)
     }
 
