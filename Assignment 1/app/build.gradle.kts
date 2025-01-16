@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.climbingmountainmoblileapp"
-    compileSdk = 34
+    namespace = "com.example.climbingmoutainapp"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.climbingmountainmoblileapp"
+        applicationId = "com.example.climbingmoutainapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

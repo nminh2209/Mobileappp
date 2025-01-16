@@ -1,4 +1,4 @@
-package com.example.climbingmountainmoblileapp
+package com.example.climbingmoutainapp
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.climbingmountainmoblileapp
+package com.example.climbingmoutainapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.climbingmountainmoblileapp.databinding.FragmentSecondBinding
+import com.example.climbingmoutainapp.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
