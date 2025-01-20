@@ -29,10 +29,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
+        Log.d(LOG_TAG, "----")
         Log.d(LOG_TAG, "onCreate")
-        Log.d(LOG_TAG, "onStart")
-        Log.d(LOG_TAG, "onResume")
+
 
 
         mMessageEditText = findViewById(R.id.editText_main)
