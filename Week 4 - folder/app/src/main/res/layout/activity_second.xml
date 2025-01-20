@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/button_cheese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cheese" />
+
+    <Button
+        android:id="@+id/button_rice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rice" />
+
+    <Button
+        android:id="@+id/button_apples"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apples" />
+
+
+</LinearLayout>
