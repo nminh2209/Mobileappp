@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "App initialized with score: $currentScore")
     }
 
+
     private fun initializeViews() {
         scoreText = findViewById(R.id.scoreText)
         climbButton = findViewById(R.id.climbButton)
@@ -111,3 +112,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
