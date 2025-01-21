@@ -1,41 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- English -->
-    <string name="app_name_en">Climbing Score</string>
-    <string name="climb_en">Climb</string>
-    <string name="fall_en">Fall</string>
-    <string name="reset_en">Reset</string>
-    <string name="next_en">Next</string>
-    <string name="previous_en">Previous</string>
-    <string name="lorem_ipsum_en">Lorem ipsum dolor sit amet</string>
-    <string name="action_settings_en">Settings</string>
-    <string name="first_fragment_label_en">First Fragment</string>
-    <string name="second_fragment_label_en">Second Fragment</string>
-    <string name="language_en">English</string>
+    <string name="app_name">Climbing Score</string>
+    <string name="climb">Climb</string>
+    <string name="fall">Fall</string>
+    <string name="reset">Reset</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
 
-    <!-- Spanish -->
-    <string name="app_name_es">Puntuación de Escalada</string>
-    <string name="climb_es">Escalar</string>
-    <string name="fall_es">Caer</string>
-    <string name="reset_es">Reiniciar</string>
-    <string name="next_es">Siguiente</string>
-    <string name="previous_es">Anterior</string>
-    <string name="lorem_ipsum_es">Lorem ipsum dolor sit amet</string>
-    <string name="action_settings_es">Ajustes</string>
-    <string name="first_fragment_label_es">Primer Fragmento</string>
-    <string name="second_fragment_label_es">Segundo Fragmento</string>
-    <string name="language_es">Español</string>
+    <!-- Japanese -->
+    <string name="app_name_ja">クライミングスコア</string>
+    <string name="climb_ja">登る</string>
+    <string name="fall_ja">落下</string>
+    <string name="reset_ja">リセット</string>
+    <string name="next_ja">次へ</string>
+    <string name="previous_ja">前へ</string>
+    <string name="lorem_ipsum_ja">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings_ja">設定</string>
+    <string name="first_fragment_label_ja">最初のフラグメント</string>
+    <string name="second_fragment_label_ja">2番目のフラグメント</string>
 
-    <!-- French -->
-    <string name="app_name_fr">Score d'Escalade</string>
-    <string name="climb_fr">Grimper</string>
-    <string name="fall_fr">Tomber</string>
-    <string name="reset_fr">Réinitialiser</string>
-    <string name="next_fr">Suivant</string>
-    <string name="previous_fr">Précédent</string>
-    <string name="lorem_ipsum_fr">Lorem ipsum dolor sit amet</string>
-    <string name="action_settings_fr">Paramètres</string>
-    <string name="first_fragment_label_fr">Premier Fragment</string>
-    <string name="second_fragment_label_fr">Deuxième Fragment</string>
-    <string name="language_fr">Français</string>
+    <!-- Vietnamese -->
+    <string name="app_name_vi">Điểm Leo Núi</string>
+    <string name="climb_vi">Leo</string>
+    <string name="fall_vi">Rơi</string>
+    <string name="reset_vi">Đặt Lại</string>
+    <string name="next_vi">Tiếp</string>
+    <string name="previous_vi">Trước</string>
+    <string name="lorem_ipsum_vi">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings_vi">Cài Đặt</string>
+    <string name="first_fragment_label_vi">Fragment Đầu Tiên</string>
+    <string name="second_fragment_label_vi">Fragment Thứ Hai</string>
 </resources>

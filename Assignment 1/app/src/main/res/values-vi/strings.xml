@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Điểm Leo Núi</string>
+    <string name="climb">Leo</string>
+    <string name="fall">Rơi</string>
+    <string name="reset">Đặt Lại</string>
+    <string name="next">Tiếp</string>
+    <string name="previous">Trước</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings">Cài Đặt</string>
+    <string name="first_fragment_label">Fragment Đầu Tiên</string>
+    <string name="second_fragment_label">Fragment Thứ Hai</string>
+</resources>

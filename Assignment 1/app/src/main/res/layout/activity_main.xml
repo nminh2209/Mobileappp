@@ -6,6 +6,34 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/langEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EN"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/langJapanese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JP"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/langVietnamese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VN"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/scoreText"
         android:layout_width="wrap_content"

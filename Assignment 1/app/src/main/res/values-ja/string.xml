@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">クライミングスコア</string>
+    <string name="climb">登る</string>
+    <string name="fall">落下</string>
+    <string name="reset">リセット</string>
+    <string name="next">次へ</string>
+    <string name="previous">前へ</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings">設定</string>
+    <string name="first_fragment_label">最初のフラグメント</string>
+    <string name="second_fragment_label">2番目のフラグメント</string>
+</resources>
