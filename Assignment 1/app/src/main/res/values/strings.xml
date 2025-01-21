@@ -1,12 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Climbing Score</string>
-    <string name="climb">Climb</string>
-    <string name="fall">Fall</string>
-    <string name="reset">Reset</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet</string>
-    <string name="action_settings">Settings</string>
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <!-- English -->
+    <string name="app_name_en">Climbing Score</string>
+    <string name="climb_en">Climb</string>
+    <string name="fall_en">Fall</string>
+    <string name="reset_en">Reset</string>
+    <string name="next_en">Next</string>
+    <string name="previous_en">Previous</string>
+    <string name="lorem_ipsum_en">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings_en">Settings</string>
+    <string name="first_fragment_label_en">First Fragment</string>
+    <string name="second_fragment_label_en">Second Fragment</string>
+    <string name="language_en">English</string>
+
+    <!-- Spanish -->
+    <string name="app_name_es">Puntuación de Escalada</string>
+    <string name="climb_es">Escalar</string>
+    <string name="fall_es">Caer</string>
+    <string name="reset_es">Reiniciar</string>
+    <string name="next_es">Siguiente</string>
+    <string name="previous_es">Anterior</string>
+    <string name="lorem_ipsum_es">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings_es">Ajustes</string>
+    <string name="first_fragment_label_es">Primer Fragmento</string>
+    <string name="second_fragment_label_es">Segundo Fragmento</string>
+    <string name="language_es">Español</string>
+
+    <!-- French -->
+    <string name="app_name_fr">Score d'Escalade</string>
+    <string name="climb_fr">Grimper</string>
+    <string name="fall_fr">Tomber</string>
+    <string name="reset_fr">Réinitialiser</string>
+    <string name="next_fr">Suivant</string>
+    <string name="previous_fr">Précédent</string>
+    <string name="lorem_ipsum_fr">Lorem ipsum dolor sit amet</string>
+    <string name="action_settings_fr">Paramètres</string>
+    <string name="first_fragment_label_fr">Premier Fragment</string>
+    <string name="second_fragment_label_fr">Deuxième Fragment</string>
+    <string name="language_fr">Français</string>
 </resources>
