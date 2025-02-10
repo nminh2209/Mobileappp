@@ -13,9 +13,9 @@ import java.util.Locale
 
 
 class MainActivity : AppCompatActivity() {
-    private var currentScore = 0
-    private var currentHold = 0
-    private var hasFallen = false
+    private var currentScore = 0 //Tracks the user's score.
+    private var currentHold = 0  //Tracks the hold level.
+    private var hasFallen = false //Boolean flag to prevent additional actions after a fall.
     private lateinit var scoreText: TextView
     private lateinit var climbButton: Button
     private lateinit var fallButton: Button
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "App initialized with score: $currentScore")
     }
 
-    private fun setLocale(languageCode: String) {
+    private fun setLocale(languageCode: String) { // Dynamically updates the app language.
         val locale = Locale(languageCode)
         Locale.setDefault(locale)
         val resources = resources
@@ -60,14 +60,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun initializeViews() {
+    private fun initializeViews() { // Initializes UI components.
         scoreText = findViewById(R.id.scoreText)
         climbButton = findViewById(R.id.climbButton)
         fallButton = findViewById(R.id.fallButton)
         resetButton = findViewById(R.id.resetButton)
     }
 
-    private fun setupButtons() {
+    private fun setupButtons() {  // Defines button actions for climbing, falling, and resetting.
         climbButton.setOnClickListener {
             if (!hasFallen && currentHold < 9) {
                 currentHold++
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateScoreDisplay() {
+    private fun updateScoreDisplay() {  // Updates UI elements based on user progress.
         scoreText.text = currentScore.toString()
         scoreText.setTextColor(when (currentHold) {
             in 1..3 -> Color.BLUE
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
+    override fun onSaveInstanceState(outState: Bundle) { //stores the game state in a Bundle before the activity is paused or destroyed.
         super.onSaveInstanceState(outState)
         outState.putInt(STATE_SCORE, currentScore)
         outState.putInt(STATE_HOLD, currentHold)
@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "State saved")
     }
 
-    private fun restoreState(savedInstanceState: Bundle?) {
+    private fun restoreState(savedInstanceState: Bundle?) { //•	restoreState() retrieves the stored data and reinstates the previous game state.
         savedInstanceState?.let {
             currentScore = it.getInt(STATE_SCORE)
             currentHold = it.getInt(STATE_HOLD)
