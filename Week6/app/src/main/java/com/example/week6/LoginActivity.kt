@@ -1,6 +1,7 @@
 package com.example.week6
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -12,27 +13,32 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val emailEditText = findViewById<EditText>(R.id.emailEditText)
-        val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
-        val loginButton = findViewById<Button>(R.id.loginButton)
+        val usernameField: EditText = findViewById(R.id.emailEditText)
+        val passwordField: EditText = findViewById(R.id.passwordEditText)
+        val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString().trim()
+            val username = usernameField.text.toString()
+            val password = passwordField.text.toString()
 
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            if (validateLogin(username, password)) {
+                val intent = Intent(this, AdminActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
-
-                if (email == "123@gmail.com" && password == "123") {
-                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, AdminActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
-                }
+                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+    private fun validateLogin(username: String, password: String): Boolean {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("AdminPrefs", MODE_PRIVATE)
+        val savedPassword = sharedPreferences.getString("admin_password", "admin123") ?: "admin123"
+
+        println("DEBUG: Saved password -> $savedPassword | Entered password -> $password")
+
+        return username == "admin" && password == savedPassword
+    }
+
+
 }
