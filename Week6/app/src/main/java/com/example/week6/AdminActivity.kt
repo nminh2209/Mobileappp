@@ -80,7 +80,7 @@ class AdminActivity : AppCompatActivity() {
             putString("admin_password", password)
             apply()
         }
-        // Debug log
+
         val savedPassword = sharedPreferences.getString("admin_password", "admin123")
         println("DEBUG: New password saved -> $savedPassword")
     }
