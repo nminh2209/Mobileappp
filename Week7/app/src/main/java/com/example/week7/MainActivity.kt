@@ -2,7 +2,9 @@ package com.example.week7
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,37 +18,51 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val avatars = intArrayOf(
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_foreground,
+            R.drawable.ic_launcher_foreground,
+            R.drawable.ic_launcher_background,
+        )
+
         val strList = arrayOf("Nguyen A", "Nguyen B", "Nguyen C", "Nguyen D")
         lsStudents = findViewById(R.id.lsStudents)
-
-
         lsStudents.layoutManager = LinearLayoutManager(this)
 
-        val adapter = StudentAdapter(strList)
+        val adapter = StudentAdapter(strList, avatars) { name ->
+            Toast.makeText(this, name, Toast.LENGTH_LONG).show()
+        }
         lsStudents.adapter = adapter
     }
 }
 
-class StudentAdapter(private val items: Array<String>) :
-    RecyclerView.Adapter<StudentAdapter.ViewHolder>() {
+class StudentAdapter(
+    private val items: Array<String>,
+    private val avatars: IntArray,
+    private val onItemClick: (String) -> Unit
+) : RecyclerView.Adapter<StudentAdapter.ViewHolder>() {
 
-    class ViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView = view.findViewById(R.id.studentName)
+        val imageView: ImageView = view.findViewById(R.id.studentImage)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val textView = LayoutInflater.from(parent.context)
-            .inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
-        return ViewHolder(textView)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.student_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position]
-        holder.textView.setOnClickListener {
-            Toast.makeText(holder.textView.context, items[position], Toast.LENGTH_SHORT).show()
-        }
+        holder.imageView.setImageResource(avatars[position])
+        holder.itemView.setOnClickListener { onItemClick(items[position]) }
     }
 
     override fun getItemCount() = items.size
 }
+
 
 
 
