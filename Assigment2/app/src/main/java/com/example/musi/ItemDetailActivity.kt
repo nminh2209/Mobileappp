@@ -1,3 +1,4 @@
+
 package com.example.musi
 
 import android.os.Bundle
@@ -5,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.musi.R
 import com.example.musi.models.RentalItem
 
 class ItemDetailActivity : AppCompatActivity() {
