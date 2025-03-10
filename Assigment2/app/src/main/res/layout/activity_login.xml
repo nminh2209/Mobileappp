@@ -1,16 +1,17 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:musi="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="24dp"
-    android:background="@color/white">
+    tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="252dp"
         android:text="Login"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -24,16 +25,17 @@
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
         android:background="@android:color/darker_gray"
         android:hint="Username"
         android:padding="12dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        musi:layout_constraintEnd_toEndOf="parent"
-        musi:layout_constraintHorizontal_bias="0.0"
+        musi:layout_constraintTop_toBottomOf="@id/title"
         musi:layout_constraintStart_toStartOf="parent"
-        musi:layout_constraintTop_toBottomOf="@id/title" />
+        musi:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <EditText
         android:id="@+id/password"
@@ -46,23 +48,26 @@
         android:padding="12dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        musi:layout_constraintEnd_toEndOf="parent"
-        musi:layout_constraintHorizontal_bias="0.0"
+        musi:layout_constraintTop_toBottomOf="@id/username"
         musi:layout_constraintStart_toStartOf="parent"
-        musi:layout_constraintTop_toBottomOf="@id/username" />
+        musi:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
         android:background="@android:color/holo_blue_dark"
         android:padding="12dp"
         android:text="Login"
-        android:textColor="@android:color/white"
+        android:textColor="#212121"
         android:textSize="18sp"
-        musi:layout_constraintEnd_toEndOf="parent"
-        musi:layout_constraintHorizontal_bias="1.0"
+        musi:layout_constraintTop_toBottomOf="@id/password"
         musi:layout_constraintStart_toStartOf="parent"
-        musi:layout_constraintTop_toBottomOf="@id/password" />
+        musi:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

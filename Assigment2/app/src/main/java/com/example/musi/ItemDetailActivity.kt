@@ -1,12 +1,11 @@
-
 package com.example.musi
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.musi.R
 import com.example.musi.models.RentalItem
 
 class ItemDetailActivity : AppCompatActivity() {
@@ -14,6 +13,7 @@ class ItemDetailActivity : AppCompatActivity() {
     private lateinit var itemRating: TextView
     private lateinit var itemPrice: TextView
     private lateinit var itemAttribute: TextView
+    private lateinit var itemImage: ImageView
     private lateinit var borrowButton: Button
     private lateinit var cancelButton: Button
     private var rentalItem: RentalItem? = null
@@ -25,7 +25,8 @@ class ItemDetailActivity : AppCompatActivity() {
         itemName = findViewById(R.id.item_name)
         itemRating = findViewById(R.id.item_rating)
         itemPrice = findViewById(R.id.item_price)
-        itemAttribute = findViewById(R.id.item_attribute)
+
+        itemImage = findViewById(R.id.item_image)
         borrowButton = findViewById(R.id.borrow_button)
         cancelButton = findViewById(R.id.cancel_button)
 
@@ -40,6 +41,7 @@ class ItemDetailActivity : AppCompatActivity() {
             // Handle the borrow action
             Toast.makeText(this@ItemDetailActivity, "Item borrowed!", Toast.LENGTH_SHORT).show()
             // Optionally, you can finish the activity or navigate back
+            setResult(RESULT_OK)
             finish()
         }
 
@@ -47,6 +49,7 @@ class ItemDetailActivity : AppCompatActivity() {
             // Handle the cancel action
             Toast.makeText(this@ItemDetailActivity, "Action cancelled.", Toast.LENGTH_SHORT).show()
             // Optionally, you can finish the activity or navigate back
+            setResult(RESULT_CANCELED)
             finish()
         }
     }
@@ -57,7 +60,6 @@ class ItemDetailActivity : AppCompatActivity() {
         itemPrice.text = "${item.pricePerMonth} credits"
         itemAttribute.text = item.multiChoiceAttribute
         // Set image resource if applicable
-        // val itemImage: ImageView = findViewById(R.id.item_image)
         // itemImage.setImageResource(item.getImageResource())
     }
 }

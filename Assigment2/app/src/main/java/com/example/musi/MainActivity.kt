@@ -2,14 +2,15 @@ package com.example.musi
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.musi.models.RentalItem
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(), RentalItemAdapter.OnItemClickListener {
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var rentalItems: MutableList<RentalItem>
     private var username: String? = null
     private var credits: Int = 0
 
@@ -17,57 +18,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        recyclerView = findViewById(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        rentalItems = mutableListOf(
+            RentalItem("Guitar", 4.0f, "Acoustic", 10.0f),
+            RentalItem("Drum Set", 5.0f, "Electronic", 15.0f),
+            RentalItem("Keyboard", 3.0f, "Synth", 12.0f),
+            RentalItem("Microphone", 4.0f, "Dynamic", 8.0f)
+        )
+
         username = intent.getStringExtra("username")
         credits = intent.getIntExtra("credits", 0)
 
-        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.navigation_search -> {
-                    loadFragment(SearchFragment())
-                    true
-                }
-                R.id.navigation_profile -> {
-                    val profileFragment = ProfileFragment()
-                    val bundle = Bundle()
-                    bundle.putString("username", username)
-                    bundle.putInt("credits", credits)
-                    profileFragment.arguments = bundle
-                    loadFragment(profileFragment)
-                    true
-                }
-                else -> false
+        val adapter = RentalItemAdapter(this, rentalItems, this)
+        recyclerView.adapter = adapter
+    }
+
+    override fun onBorrowClick(rentalItem: RentalItem) {
+        val intent = Intent(this, ItemDetailActivity::class.java)
+        intent.putExtra("selectedItem", rentalItem)
+        startActivityForResult(intent, 1)
+    }
+
+    override fun onCancelClick(rentalItem: RentalItem) {
+        Toast.makeText(this, "Action cancelled for ${rentalItem.name}", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Booking successful!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Booking cancelled.", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        // Load the default fragment
-        loadFragment(HomeFragment())
-    }
-
-    private fun loadFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_logout -> {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
         }
     }
 }
