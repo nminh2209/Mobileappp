@@ -39,7 +39,12 @@ class RentalItemAdapter(
         private val itemName: TextView = itemView.findViewById(R.id.item_name)
         private val itemRating: TextView = itemView.findViewById(R.id.item_rating)
         private val itemPrice: TextView = itemView.findViewById(R.id.item_price)
-        private val itemImage: ImageView = itemView.findViewById(R.id.item_image)
+        private val itemImage1: ImageView = itemView.findViewById(R.id.item_image_1)
+        private val itemImage2: ImageView = itemView.findViewById(R.id.item_image_2)
+        private val itemImage3: ImageView = itemView.findViewById(R.id.item_image_3)
+        private val itemImage4: ImageView = itemView.findViewById(R.id.item_image_4)
+        private val itemImage5: ImageView = itemView.findViewById(R.id.item_image_5)
+        private val itemImage6: ImageView = itemView.findViewById(R.id.item_image_6)
         private val borrowButton: Button = itemView.findViewById(R.id.borrow_button)
         private val cancelButton: Button = itemView.findViewById(R.id.cancel_button)
 

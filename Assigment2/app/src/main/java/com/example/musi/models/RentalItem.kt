@@ -7,13 +7,15 @@ data class RentalItem(
     val name: String,
     val rating: Float,
     val multiChoiceAttribute: String,
-    val pricePerMonth: Float
+    val pricePerMonth: Float,
+    val imageResource: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readFloat(),
         parcel.readString() ?: "",
-        parcel.readFloat()
+        parcel.readFloat(),
+        parcel.readInt()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -21,6 +23,7 @@ data class RentalItem(
         parcel.writeFloat(rating)
         parcel.writeString(multiChoiceAttribute)
         parcel.writeFloat(pricePerMonth)
+        parcel.writeInt(imageResource)
     }
 
     override fun describeContents(): Int {

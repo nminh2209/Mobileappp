@@ -7,11 +7,52 @@
     android:background="@android:color/white">
 
     <ImageView
-        android:id="@+id/item_image"
+        android:id="@+id/item_image_1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/item_image_desc"/>
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/guitar_image"/>
+
+    <ImageView
+        android:id="@+id/item_image_2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/drum_image"/>
+
+    <ImageView
+        android:id="@+id/item_image_3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/piano_image"/>
+
+    <ImageView
+        android:id="@+id/item_image_4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/violin_image"/>
+
+    <ImageView
+        android:id="@+id/item_image_5"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/flute_image"/>
+
+    <ImageView
+        android:id="@+id/item_image_6"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/item_image_desc"
+        android:src="@drawable/saxophone_image"/>
 
     <TextView
         android:id="@+id/item_name"

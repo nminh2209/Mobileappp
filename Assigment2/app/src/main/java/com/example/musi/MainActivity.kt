@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity(), RentalItemAdapter.OnItemClickListener 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         rentalItems = mutableListOf(
-            RentalItem("Guitar", 4.0f, "Acoustic", 10.0f),
-            RentalItem("Drum Set", 5.0f, "Electronic", 15.0f),
-            RentalItem("Keyboard", 3.0f, "Synth", 12.0f),
-            RentalItem("Microphone", 4.0f, "Dynamic", 8.0f)
+            RentalItem("Guitar", 4.0f, "Acoustic", 10.0f, R.drawable.guitar_image),
+            RentalItem("Drum Set", 5.0f, "Electronic", 15.0f, R.drawable.drum_image),
+            RentalItem("Keyboard", 3.0f, "Synth", 12.0f, R.drawable.piano_image),
+            RentalItem("Violin", 4.0f, "Dynamic", 8.0f, R.drawable.violin_image)
         )
 
         username = intent.getStringExtra("username")

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Button to Start T1 & T2 -->
+    <Button
+        android:id="@+id/startThreadsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start T1 & T2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.2"/>
+
+    <!-- Thread 1 Execution Time Display -->
+    <TextView
+        android:id="@+id/thread1TimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="T1 Execution Time: 0 ms"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/startThreadsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <!-- Thread 2 Execution Time Display -->
+    <TextView
+        android:id="@+id/thread2TimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="T2 Execution Time: 0 ms"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/thread1TimeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <!-- Button to Start Only Thread 2 -->
+    <Button
+        android:id="@+id/startThread2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Thread2"
+        app:layout_constraintTop_toBottomOf="@id/thread2TimeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <!-- Execution Time Display -->
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Execution Time: 0 ms"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/startThread2Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
