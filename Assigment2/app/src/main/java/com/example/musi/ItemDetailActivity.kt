@@ -68,11 +68,5 @@ class ItemDetailActivity : AppCompatActivity() {
         itemRating.text = item.rating.toString()
         itemPrice.text = "${item.pricePerMonth} credits"
 
-        // itemImage1.setImageResource(item.getImageResource1())
-        // itemImage2.setImageResource(item.getImageResource2())
-        // itemImage3.setImageResource(item.getImageResource3())
-        // itemImage4.setImageResource(item.getImageResource4())
-        // itemImage5.setImageResource(item.getImageResource5())
-        // itemImage6.setImageResource(item.getImageResource6())
     }
 }

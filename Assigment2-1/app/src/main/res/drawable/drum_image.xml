@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/drum_color" />
+    <item>
+        <bitmap
+            android:src="@drawable/drum_image_source"
+            android:gravity="center" />
+    </item>
+</layer-list>

@@ -22,7 +22,7 @@ class RentalItemAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RentalItemViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.activity_item_detail, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_rental, parent, false)
         return RentalItemViewHolder(view)
     }
 
@@ -39,12 +39,7 @@ class RentalItemAdapter(
         private val itemName: TextView = itemView.findViewById(R.id.item_name)
         private val itemRating: TextView = itemView.findViewById(R.id.item_rating)
         private val itemPrice: TextView = itemView.findViewById(R.id.item_price)
-        private val itemImage1: ImageView = itemView.findViewById(R.id.item_image_1)
-        private val itemImage2: ImageView = itemView.findViewById(R.id.item_image_2)
-        private val itemImage3: ImageView = itemView.findViewById(R.id.item_image_3)
-        private val itemImage4: ImageView = itemView.findViewById(R.id.item_image_4)
-        private val itemImage5: ImageView = itemView.findViewById(R.id.item_image_5)
-        private val itemImage6: ImageView = itemView.findViewById(R.id.item_image_6)
+        private val itemImage: ImageView = itemView.findViewById(R.id.item_image)
         private val borrowButton: Button = itemView.findViewById(R.id.borrow_button)
         private val cancelButton: Button = itemView.findViewById(R.id.cancel_button)
 
@@ -52,8 +47,7 @@ class RentalItemAdapter(
             itemName.text = rentalItem.name
             itemRating.text = rentalItem.rating.toString()
             itemPrice.text = "${rentalItem.pricePerMonth} credits"
-
-            // Assume itemImage is set based on the item name or some resource mapping
+            itemImage.setImageResource(rentalItem.imageResource)
 
             borrowButton.setOnClickListener {
                 listener.onBorrowClick(rentalItem)
