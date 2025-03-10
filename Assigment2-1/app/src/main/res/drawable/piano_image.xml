@@ -1,8 +1,0 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/white" />
-    <item>
-        <bitmap
-            android:src="@drawable/piano_image"
-            android:gravity="center" />
-    </item>
-</layer-list>
