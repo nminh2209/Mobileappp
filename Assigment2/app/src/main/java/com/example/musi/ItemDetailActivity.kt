@@ -12,12 +12,7 @@ class ItemDetailActivity : AppCompatActivity() {
     private lateinit var itemName: TextView
     private lateinit var itemRating: TextView
     private lateinit var itemPrice: TextView
-    private lateinit var itemImage1: ImageView
-    private lateinit var itemImage2: ImageView
-    private lateinit var itemImage3: ImageView
-    private lateinit var itemImage4: ImageView
-    private lateinit var itemImage5: ImageView
-    private lateinit var itemImage6: ImageView
+
     private lateinit var borrowButton: Button
     private lateinit var cancelButton: Button
     private var rentalItem: RentalItem? = null
@@ -30,12 +25,13 @@ class ItemDetailActivity : AppCompatActivity() {
         itemRating = findViewById(R.id.item_rating)
         itemPrice = findViewById(R.id.item_price)
 
-        itemImage1 = findViewById(R.id.item_image_1)
+       /** itemImage1 = findViewById(R.id.item_image_1)
         itemImage2 = findViewById(R.id.item_image_2)
         itemImage3 = findViewById(R.id.item_image_3)
         itemImage4 = findViewById(R.id.item_image_4)
         itemImage5 = findViewById(R.id.item_image_5)
         itemImage6 = findViewById(R.id.item_image_6)
+        **/
         borrowButton = findViewById(R.id.borrow_button)
         cancelButton = findViewById(R.id.cancel_button)
 

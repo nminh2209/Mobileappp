@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if (username == "user" && password == "password") {
+            if (username == "abc" && password == "123") {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("username", username)
                 intent.putExtra("credits", 100) // Example credit value
