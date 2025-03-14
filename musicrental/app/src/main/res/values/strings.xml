@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Music Rental</string>
+    <string name="borrow">Borrow</string>
+    <string name="next">Next</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="rental_success">rented successfully!</string>
+    <string name="rental_cancelled">Rental cancelled</string>
+</resources>
