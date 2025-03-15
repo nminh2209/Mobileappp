@@ -3,6 +3,8 @@ package com.example.musicrental
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.animation.AlphaAnimation
 import android.widget.Button
 import android.widget.EditText
@@ -38,9 +40,22 @@ class BorrowActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.borrowImage).setImageResource(instrument.imageResId)
 
         val renterName = findViewById<EditText>(R.id.renterName)
-        renterName.minHeight = 60
+        val saveButton = findViewById<Button>(R.id.saveButton)
 
-        findViewById<Button>(R.id.saveButton).setOnClickListener {
+        // Ensure saveButton starts disabled
+        saveButton.isEnabled = false
+
+        // Watch for text changes to enable/disable the button
+        renterName.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                saveButton.isEnabled = !s.isNullOrBlank()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        saveButton.setOnClickListener {
             val renter = renterName.text.toString()
             if (renter.isNotEmpty() && instrument.stock > 0 && userCredits >= itemPrice) {
                 instrument.stock--
