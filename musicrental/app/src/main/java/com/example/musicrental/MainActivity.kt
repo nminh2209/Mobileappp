@@ -1,19 +1,21 @@
 package com.example.musicrental
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
-import android.view.animation.AlphaAnimation
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.constraintlayout.widget.ConstraintLayout
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     // List of available instruments with name, image, rating, attributes, price, and stock.
     private val instruments = mutableListOf(
@@ -31,7 +33,34 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Load theme preference before setting content view
+        sharedPreferences = getSharedPreferences("ThemePrefs", MODE_PRIVATE)
+        if (sharedPreferences.getBoolean("isDarkMode", false)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         setContentView(R.layout.activity_main)
+
+        // Theme toggle button
+        findViewById<Button>(R.id.toggleThemeButton).setOnClickListener {
+            val isDarkMode = sharedPreferences.getBoolean("isDarkMode", false)
+            val editor = sharedPreferences.edit()
+
+            val newMode = if (isDarkMode) AppCompatDelegate.MODE_NIGHT_NO else AppCompatDelegate.MODE_NIGHT_YES
+            AppCompatDelegate.setDefaultNightMode(newMode)
+
+            editor.putBoolean("isDarkMode", !isDarkMode)
+            editor.apply()
+
+            // 🔥 Prevent shifting UI elements
+            window.decorView.post {
+                window.decorView.requestLayout()
+            }
+        }
+
 
         // Adjusts padding dynamically to ensure a responsive layout
         findViewById<ConstraintLayout>(R.id.mainLayout).apply {
