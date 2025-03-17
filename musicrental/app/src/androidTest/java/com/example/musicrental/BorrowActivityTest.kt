@@ -57,5 +57,5 @@ class BorrowActivityTest {
         onView(withId(R.id.creditText)).check(matches(withSubstring("Credits: ")))
     }
 
-    
+
 }
