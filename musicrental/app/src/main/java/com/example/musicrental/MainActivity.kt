@@ -55,17 +55,8 @@ class MainActivity : AppCompatActivity() {
             editor.putBoolean("isDarkMode", !isDarkMode)
             editor.apply()
 
-            // 🔥 Prevent shifting UI elements
-            window.decorView.post {
-                window.decorView.requestLayout()
-            }
         }
 
-
-        // Adjusts padding dynamically to ensure a responsive layout
-        findViewById<ConstraintLayout>(R.id.mainLayout).apply {
-            setPadding(50, 200, 50, 50)
-        }
 
         // Initialize UI with the first instrument
         updateUI()
