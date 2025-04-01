@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Switch Preference for Dark Mode -->
+    <SwitchPreferenceCompat
+        android:key="dark_mode"
+        android:title="Dark Mode"
+        android:summary="Enable or disable dark theme" />
+
+    <!-- List Preference for Audio Quality -->
+    <ListPreference
+        android:key="audio_quality"
+        android:title="Audio Quality"
+        android:summary="Select audio playback quality"
+        android:dialogTitle="Choose Quality"
+        android:entries="@array/audio_quality_options"
+        android:entryValues="@array/audio_quality_values"
+        android:defaultValue="high" />
+
+</PreferenceScreen>
