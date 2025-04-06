@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ExpenseBuddy</string>
+    <string name="add_expenses">Add Expense</string>
+    <string name="enter_the_amount">Enter the Amount</string>
+    <string name="enter_the_description">Enter the description</string>
+    <string name="amount">Amount</string>
+    <string name="content">Content</string>
+    <string name="expenses">Your Expenses</string>
+    <string name="edit_expenses">UPDATE</string>
+    <string name="date">Date</string>
+    <string name="enter_the_date">Enter the date</string>
+    <string name="tracking_expenses_with_just_a_quick_glance_">Tracking expenses with just a quick glance</string>
+    <string name="expensebuddy">Expense Buddy</string>
+    <string name="created_by_minhh">Created By Minhh</string>
+    <string name="ddmmyyyy">DDMMYYYY</string>
+</resources>
