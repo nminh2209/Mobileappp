@@ -9,27 +9,29 @@ import com.example.spendsense.databinding.ActivityStartBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-
 class StartActivity : AppCompatActivity() {
 
+    // ViewBinding object to access layout views safely
     private lateinit var binding: ActivityStartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Inflate layout using ViewBinding
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Load the GIF into the ImageView
+        // Load a GIF (e.g., pig animation) into the ImageView using Glide
         Glide.with(this)
-            .asGif()
-            .load(R.drawable.pig)
-            .into(binding.gifImageView)
+            .asGif() // Treat the resource as a GIF
+            .load(R.drawable.pig) // Resource to load
+            .into(binding.gifImageView) // Target ImageView
 
-        // Delay redirection to MainActivity
+        // Delay for 3.5 seconds, then navigate to MainActivity
         Handler().postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
-        }, 3500) // 3000 milliseconds = 3 seconds delay
+            finish() // Finish StartActivity so it doesn’t stay in the back stack
+        }, 3500) // Delay in milliseconds (3500ms = 3.5 seconds)
     }
 }
